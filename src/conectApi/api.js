@@ -50,26 +50,26 @@ async function CompleteListOfPokemons(){
 }
 
 
-const Story = () => {
-  const [characters, setCharacters] = useState(['Mickey', 'Minnie']);
+// const Story = () => {
+//   const [characters, setCharacters] = useState(['Mickey', 'Minnie']);
 
-  useEffect(() => {
-    // console.log('A lista de personagens foi atualizada:', characters);
-  }, [characters]);
+//   useEffect(() => {
+//     // console.log('A lista de personagens foi atualizada:', characters);
+//   }, [characters]);
 
-  return (
-    <div>
-      <h1>Minha história</h1>
-      <ul>
-        {characters.map(character => (
-          <li key={character}>{character}</li>
-        ))}
-      </ul>
-      <button onClick={() => setCharacters(['cabanhas',...characters ])}>
-        Adicionar personagem
-      </button>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h1>Minha história</h1>
+//       <ul>
+//         {characters.map(character => (
+//           <li key={character}>{character}</li>
+//         ))}
+//       </ul>
+//       <button onClick={() => setCharacters(['cabanhas',...characters ])}>
+//         Adicionar personagem
+//       </button>
+//     </div>
+//   );
+// };
 
-export default Story;
+// export default Story;

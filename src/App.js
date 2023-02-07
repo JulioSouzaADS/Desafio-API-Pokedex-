@@ -1,17 +1,18 @@
-import React from "react";
-import Story, { Pokedex } from "./conectApi/api";
-
-
-
+import './App.css';
+import Button from './components/button/button';
+import Card from './components/card/card'
+import PokemonsList from './services/listPokemons/pokemonList'
+import PokemonsItens from './services/pokemonsItens/pokemonItens';
 function App() {
   return (
     <>
-      <h1>Listar</h1>
-        <Story/>
-        <Pokedex/>
-    </>
       
-  );
+      <PokemonsItens>
+       
+
+      </PokemonsItens>
+    </>
+  )
 }
 
 export default App;
