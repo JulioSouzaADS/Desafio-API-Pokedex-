@@ -1,16 +1,17 @@
 import './App.css';
-import Button from './components/button/button';
 import Card from './components/card/card'
 import PokemonsList from './services/listPokemons/pokemonList'
-import PokemonsItens from './services/pokemonsItens/pokemonItens';
+// import PokemonsItens from './services/pokemonsItens/pokemonItens';
 function App() {
-  return (
+  const {pokedexData} = PokemonsList()
+  console.log(pokedexData)
+  return ( 
     <>
-      
-      <PokemonsItens>
-       
-
-      </PokemonsItens>
+     <div>
+        {pokedexData && pokedexData.map(pokemon => (
+          <Card pokemon={pokemon}/>
+        ))}
+     </div>
     </>
   )
 }
