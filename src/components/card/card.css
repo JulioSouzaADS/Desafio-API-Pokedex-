@@ -3,3 +3,69 @@
     width: 600px;
     height: 90vh;
 }
+
+ul,li{
+    list-style: none;
+  }
+  
+  .card {
+    background: linear-gradient(to bottom, #42a796, #FA709A);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #333;
+    text-align: center;
+  }
+  
+
+  .card-title h1 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 15px;
+  }
+  
+  .card-title h2{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .card-title p{
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    margin: 1px;
+
+  }
+
+
+  .card .painel {
+    font-size: 12px;
+    margin:auto;
+    display: flex;
+    width: 90%;
+    color: rgb(255, 253, 251);
+    text-transform: capitalize;
+    
+  }
+  .card .info {
+    margin:auto;
+    display: flex;
+    border: solid 2px black;
+  }
+
+  strong {
+    text-align: center;
+  
+  }
+  
+  
+  img {
+    padding: 30px;
+    width: 80%;
+    height: 30vh;
+    border: 2px solid black;
+   
+  }

@@ -3,7 +3,7 @@ import { urlBase } from "../../variables.js/urlApi";
 import { useState, useEffect } from "react";
 import './listPokemons.css'
 
-let QuantityPokemons = 5
+let QuantityPokemons = 10
 //conectar Api Pokemom
 async function CompleteListOfPokemons() {
   try {
@@ -17,38 +17,50 @@ async function CompleteListOfPokemons() {
   }
 }
 
-async function ItensOfPokemons(url) {
-
-    try {
-        // const pokemon = `${urlBase}pokemon/%{id}`
-        const response = await fetch(url)
-        return await response.json()
-    } catch (error) {
-        console.error(error);
-    }
-    
-}
-
 const PokemonsList = () => {
   const [pokedexData, setPokedexData] = useState([])
 
   useEffect(() => {
 
     const fetchData = async () => {
+
       const pokemonsList = await CompleteListOfPokemons()
-      // console.log(pokemonsList)
-      const dates = pokemonsList.results.map(async dates => {  
-        return await ItensOfPokemons(dates.url)
-      })
-      const pokemonsData = await Promise.all(dates);
-      // console.log(pokemonsData)
-       setPokedexData([...pokedexData,...pokemonsData])
+      // console.log(pokemonsList,'laele')
+      const dates = pokemonsList.results.map(dates => { return dates.name })
+      const results = (dates)
+      // console.log(dates)
+      setPokedexData(results)
+      // console.log(results)
     }
     fetchData()
 
   }, [])
-  // console.log (pokedexData)
-  return {pokedexData};
+  console.log (pokedexData)
+
+  return (
+    <div className="container">
+      <h1> My List Of Pokemon </h1>
+      <ul>
+        {pokedexData.map((myList, index) => (
+          <li key={index}>{index} - {myList} '-'</li>
+          
+        ))}
+      </ul>
+
+      <button onClick={(myList) => setPokedexData([...pokedexData, 'Novo Pokemon'])}>
+          
+       Add New Pokemom
+      </button>
+      
+      {/* <ul>
+        {pokedexData.map((myList,index) => (
+          <li key={index}>{index} - {myList} '- 10'</li>
+          
+        ))}
+      </ul> */}
+    </div>
+
+  );
 }
 
 

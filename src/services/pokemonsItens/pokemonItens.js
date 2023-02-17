@@ -1,14 +1,16 @@
 import React from "react";
 import { urlBase } from "../../variables.js/urlApi";
 import { useState, useEffect } from "react";
-import './PokemonItens.css'
+// import './PokemonItens.css'
 import Card from '../../components/card/card'
 
+
+let id = Math.floor(Math.random() * 1279);
 //conectar Api Pokemom
 async function ItensOfPokemons() {
 
     try {
-        const pokemon = `${urlBase}pokemon/44`
+        const pokemon = `${urlBase}pokemon/%{id}`
         const response = await fetch(`${pokemon}`)
         return await response.json()
     } catch (error) {
@@ -36,92 +38,94 @@ const PokemonsItens = () => {
             setImage(listItensofPokemons.sprites.other.dream_world.front_default);
             setMoves(listItensofPokemons.moves.slice(0, 5));
             console.log(listItensofPokemons)
-            
         }
         fetchData()
 
     }, [])
-    console.log(name)
- 
+    
     return (
-        <div className="card">
-            <div className="card-header">
-                <h3 className="card-title">{name}
-                {types.map(type => (<p key={type.type.name}>{type.type.name}</p>))} </h3>
+       
+        <Card name={name}>
+            <>
+                <div className="card-title">
+                    <h1> {name} </h1>
+                    
+                    <h2> {types.map(type => (<p key={type.type.name}>{type.type.name}</p>))} </h2>
+                </div>
+                <div>
+                    <img src={img} alt="Pokemon" />
+                </div>
 
-                <h4> <img src={img} alt="Pokemon" /> </h4>
-            </div>
-
-            <Card name={name}/>
-            
-            <div className="card-body">
-                
-                {/* <div className="card-image">
-                    <img src={img} alt="Dark Magician"/>
-                </div> */}
-                <ul className="card-details">
-                    <li><strong>Abilities:</strong>
-                        <ul className="abilities">
-                            {abilities.map(ability => (
-                                <li key={ability.ability.name}>
-                                    {ability.ability.name}</li>
-                            ))}
-                        </ul>
-                    </li>
-
-                    <li><strong>Moviments</strong>
-                        <ul className="moviments">
-                            {moves.map(move => (
+                <div className="painel">
+                    <div className="info">
+                        <li><strong>Moviments</strong>
+                            <h2> {moves.map(move => (
                                 <li key={move.move.name}>{move.move.name}</li>
                             ))}
-                        </ul>
-                    </li>
-                    
-                </ul>
-                <p className="card-text"></p>
-            </div>
-        </div>
+                            </h2>
+                        </li>
+                    </div>
 
-// testando com props para formulario
+                    <div className="info">
+                        <li><strong>abilities</strong>
+                            <h2>  {abilities.map(ability => (
+                                <li key={ability.ability.name}>
+                                    {ability.ability.name}</li>
+
+                            ))}
+                            </h2>
+                        </li>
+                    </div>
+
+                </div>
+            </>
+            
+        </Card>
+  
     );
+    
 }
 
 
 export default PokemonsItens
 
-// console.log(listItensofPokemons)
-// abilities = listItensofPokemons.abilities.map(abilities => { return abilities.name })
-// types = listItensofPokemons.types.map(types => { return types.type.name })
-// img = listItensofPokemons.sprites.back_default
-// moves = listItensofPokemons.moves.map(moves => { return moves.move.name })
 
 
 
-{/* <div className="card">
-            <h1>Name:</h1>
-            <ul>
 
-                {name}
-            </ul>
 
-            <h1>Abilities:</h1>
-            <ul>
-                {abilities.map(ability => (
-                    <li key={ability.ability.name}>
-                        {ability.ability.name}</li>
-                ))}
-            </ul>
-            <h1>Types:</h1>
-            <ul>
-                {types.map(type => (
-                    <li key={type.type.name}>{type.type.name}</li>
-                ))}
-            </ul>
-            <img src={img} alt="Pokemon" />
-            <h1>Moves:</h1>
-            <ul>
-                {moves.map(move => (
-                    <li key={move.move.name}>{move.move.name}</li>
-                ))}
-            </ul>
-        </div> */}
+ // <div className="card">
+
+        //     <div className="card-header">
+        //         <h3 className="card-title">{name}
+        //             {types.map(type => (<p key={type.type.name}>{type.type.name}</p>))} </h3>
+
+        //         <h4> <img src={img} alt="Pokemon" /> </h4>
+
+        //     </div>
+
+        //     <div className="card-body">
+
+        //         {/* <div className="card-image">
+        //             <img src={img} alt="Dark Magician"/>
+        //         </div> */}
+        //         <ul className="card-details">
+        //             <li><strong>Abilities:</strong>
+        //                 <ul className="abilities">
+        //                     {abilities.map(ability => (
+        //                         <li key={ability.ability.name}>
+        //                             {ability.ability.name}</li>
+
+        //                     ))}
+
+        //                 </ul>
+        //             </li>
+
+        //             <li><strong>Moviments</strong>
+        //                 <ul className="moviments">
+        //                     {moves.map(move => (
+        //                         <li key={move.move.name}>{move.move.name}</li>
+        //                     ))}
+        //                 </ul>
+        //             </li>
+        //         </ul>

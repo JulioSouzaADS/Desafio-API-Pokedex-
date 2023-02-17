@@ -1,0 +1,17 @@
+
+.text {
+
+    background-color:blueviolet;
+    color: rgb(242, 248, 241);
+    font-weight: 700;
+    padding-block-end: 20px;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2%;
+    border-radius: 8%;
+    justify-content: center;
+}
