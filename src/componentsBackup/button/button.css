@@ -1,0 +1,15 @@
+
+.btn {
+
+    background-color:blueviolet;
+    color: rgb(242, 248, 241);
+    font-weight: 700; 
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2%;
+    border-radius: 8%;
+}

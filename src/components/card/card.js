@@ -1,22 +1,20 @@
-import React from "react";
-import PokemonsList from "../../services/listPokemons/pokemonList";
-import './card.css'
+import Cards from '../cards/cards.js'
+import PokemonsList from '../../services/listPokemons/pokemonList.js'
+// import PokemonsItens from './services/pokemonsItens/pokemonItens';
 
-const Card = ({pokemon}) => {
-   console.log(pokemon)
-    return (
-        <>
-        <div className="card-title">
-            <h1> {pokemon.name} </h1>
-            
-            <h2> {pokemon.types.map(type => (<p key={type.type.name}>{type.type.name}</p>))} </h2>
-        </div>
-        <div>
-            <img src={pokemon.img} alt="Pokemon" />
-        </div>
+function Card() {
+  const {pokedexData} = PokemonsList()
+  console.log(pokedexData,PokemonsList())
+  return ( 
+    <>
+     <div className='direction'>
+        {pokedexData && pokedexData.map(pokemon => (
+          <Card pokemon={pokemon}/>
+        ))}
+     </div>
+        
     </>
-    )
- 
+  )
 }
 
-export default Card
+export default Card;
