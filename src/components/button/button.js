@@ -18,7 +18,7 @@ const Button = ({label}) => {
         </button>
         
         )
-    
+
 }
 
 

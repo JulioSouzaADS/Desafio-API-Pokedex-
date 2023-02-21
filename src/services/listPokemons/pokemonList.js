@@ -8,7 +8,7 @@ let QuantityPokemons = 5
 async function CompleteListOfPokemons() {
   try {
 
-    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=0`
+    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=180`
     const response = await fetch(`${listPokemon}`)
     return await response.json()
 

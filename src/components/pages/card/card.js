@@ -1,18 +1,13 @@
 import React from "react";
-import './card.css'
+import PokemonsList from "../../../services/listPokemons/pokemonList";
 import styled from "styled-components";
-import { BrowserRouter as Router , Switch , Route , Link } from "react-router-dom";
-import Card from "../pages/card/card";
 
-function identificarItem (){
-    
-
-}
-
-const Cards = ({ pokemon }) => {
-    return (
-        <>
-            <Section >
+const Card = () => {
+  const {pokedexData} = PokemonsList()
+  console.log ( pokedexData)
+  return (
+    <>
+                  {/* <Section >
                 <div className="card-title">
                     <CardTitleH1> {pokemon.name} #{pokemon.id}</CardTitleH1>
                     <CardTitleH2> {pokemon.types.map(type => (<CardTitleP key={type.type.name}>{type.type.name}</CardTitleP>))} </CardTitleH2>
@@ -22,13 +17,12 @@ const Cards = ({ pokemon }) => {
                  <SectionDetails><button>Ver Detalhes</button></SectionDetails>
                 </div>
                 <Card></Card>
-            </Section>
-       
-        </>
-    )
+            </Section> */}
+    </>
+  )
 }
 
-    const Section = styled.section`
+const Section = styled.section`
     width: 150px;
     height: 250px;
     flex-direction: column;
@@ -74,4 +68,5 @@ const Cards = ({ pokemon }) => {
     text-transform: uppercase;
     font-style: italic;
     `
-export default Cards
+
+export default Card
