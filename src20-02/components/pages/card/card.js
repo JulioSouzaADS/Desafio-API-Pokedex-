@@ -3,29 +3,21 @@ import PokemonsList from "../../../services/listPokemons/pokemonList";
 import styled from "styled-components";
 
 const Card = () => {
-  const { pokedexData } = PokemonsList()
-  // console.log(pokedexData)
-  let cardPokemon = pokedexData.map(function(pokemon){
-    return pokemon.id 
-  
-})
-// console.log(cardPokemon)
- 
+  const {pokedexData} = PokemonsList()
   return (
     <>
-
-      {/* <Section >
-        <div className="card-title">
-          <CardTitleH1> {pokemon.name} #{pokemon.id}</CardTitleH1>
-          <CardTitleH2> {pokemon.types.map(type => (<CardTitleP key={type.type.name}>{type.type.name}</CardTitleP>))} </CardTitleH2>
-          <div>
-            <Image src={pokemon.sprites.other.home.front_shiny} alt="Pokemon" />
-          </div>
-          <SectionDetails><button>Ver Detalhes</button></SectionDetails>
-        </div>
-        <Card></Card>
-      </Section> */}
-
+        
+                  {/* <Section >
+                <div className="card-title">
+                    <CardTitleH1> {pokemon.name} #{pokemon.id}</CardTitleH1>
+                    <CardTitleH2> {pokemon.types.map(type => (<CardTitleP key={type.type.name}>{type.type.name}</CardTitleP>))} </CardTitleH2>
+                    <div>
+                        <Image src={pokemon.sprites.other.home.front_shiny} alt="Pokemon" />
+                    </div>
+                 <SectionDetails><button>Ver Detalhes</button></SectionDetails>
+                </div>
+                <Card></Card>
+            </Section> */}
     </>
   )
 }
@@ -41,15 +33,15 @@ const Section = styled.section`
     text-align: center;
     
     `
-
-const CardTitleH1 = styled.h1`
+    
+    const CardTitleH1 = styled.h1 `
     margin: 0;
     font-size: 12px;
     text-transform: uppercase;
     text-align: left;
     padding: 10px;
     `
-const CardTitleH2 = styled.h2`
+    const CardTitleH2 = styled.h2 `
     font-size: 10px;
     display: flex;
     justify-content: center;
@@ -58,7 +50,7 @@ const CardTitleH2 = styled.h2`
     font-style: italic;
     `
 
-const CardTitleP = styled.p`
+    const CardTitleP = styled.p `
     margin-top: 5px;
     padding: 5px;
     font-size: 14px;
@@ -66,13 +58,13 @@ const CardTitleP = styled.p`
     margin: 1px;
     `
 
-const Image = styled.img`
+    const Image = styled.img `
     padding: 5px;
     width: 50%;
     height: 10vh;
-    `
+    ` 
 
-const SectionDetails = styled.div`
+    const SectionDetails = styled.div `
     text-transform: uppercase;
     font-style: italic;
     `

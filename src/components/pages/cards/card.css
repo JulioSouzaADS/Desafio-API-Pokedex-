@@ -1,0 +1,54 @@
+
+ul,li{
+    list-style: none;
+  }
+  
+  .card-title h1 {
+    /* margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 15px; */
+  }
+  
+  .card-title h2{
+    /* font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin: 0; */
+  }
+
+  .card-title p{
+    /* margin-top: 5px;
+    padding: 5px;
+    font-size: 14px;
+    display: flex;
+    margin: 1px; */
+
+  }
+
+
+  .card .painel {
+    font-size: 12px;
+    margin:auto;
+    display: flex;
+    width: 90%;
+    color: rgb(255, 253, 251);
+    text-transform: capitalize;
+    
+  }
+  .card .info {
+    margin:auto;
+    display: flex;
+    border: solid 2px black;
+  }
+
+
+  
+  img {
+    /* padding: 5px;
+    width: 80%;
+    height: 20vh; */
+    /* border: 2px solid black; */
+
+  }

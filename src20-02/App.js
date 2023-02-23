@@ -1,33 +1,30 @@
 import './App.css';
-import Home from './components/pages/home/home';
-import Cards from './components/pages/cards/cards'
-
+import Cards from './components/cards/cards'
+import Card from './components/pages/card/card';
 import PokemonsList from './services/listPokemons/pokemonList'
 import { ThemeTogglerButton } from './components/themeTogglerButton/themeTogglerButton';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter , Routes , Switch , Route , Link } from "react-router-dom";
 import { ThemeProvider } from './context/themeContext';
 
 
 function App() {
   const {pokedexData} = PokemonsList()
   // console.log(pokedexData)
-
   return ( 
     <>
-    {/* <div className='direction'>
+    <div className='direction'>
       {pokedexData && pokedexData.map(pokemon => (
-        <Cards pokemon={pokemon} id={pokemon.id} />
-        
+        <Cards pokemon={pokemon} />
       ))}
-
-    </div> */}
-
-    <Home/>
-      <ThemeProvider>
+   
+    </div>
+    
+    <ThemeProvider>
         <ThemeTogglerButton/>
       </ThemeProvider>
 
-      <BrowserRouter/>
+
+ 
   </>
   )
 }
