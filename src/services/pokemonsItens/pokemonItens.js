@@ -5,17 +5,17 @@ import { useState, useEffect } from "react";
 import Card from '../../components/card/card'
 
 
-let id = Math.floor(Math.random() * 1279);
+let id = Math.floor(Math.random() * 900);
 //conectar Api Pokemom
 async function ItensOfPokemons() {
 
     try {
+        // const pokemon = `${urlBase}pokemon/%{id}`
         const pokemon = `${urlBase}pokemon/%{id}`
         const response = await fetch(`${pokemon}`)
         return await response.json()
     } catch (error) {
         console.error(error);
-
     }
 }
 

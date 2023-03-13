@@ -1,14 +1,6 @@
 import React from "react";
 import './card.css'
 import styled from "styled-components";
-import { BrowserRouter as Router , Switch , Route , Link } from "react-router-dom";
-import Card from "../card/card";
-
-
-function ID (id){
-    const identificarID =id
-    // console.log('o ID DO Item e ',identificarID)
-}
 
 const Cards = ({ pokemon }) => {
   
@@ -21,11 +13,9 @@ const Cards = ({ pokemon }) => {
                     <div>
                         <Image src={pokemon.sprites.other.home.front_shiny} alt="Pokemon" />
                     </div>
-                 <SectionDetails><button onClick={ID()}>Ver Detalhes</button></SectionDetails>
+                 <SectionDetails> <a href={`/card-detail/${pokemon.name}`}>Ver Detalhes</a> </SectionDetails>
                 </div>
-                <Card></Card>
             </Section>
-       
         </>
     )
 }

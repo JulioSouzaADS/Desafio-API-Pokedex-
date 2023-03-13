@@ -1,36 +1,19 @@
-import { BrowserRouter,Route,Switch,Link } from "react-router-dom"
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
 import Home from "../pages/home/home"
 import Card from "../pages/card/card"
 
-const RoutesFullCard = (pokemon) => {
-return (
-    <>
-    <BrowserRouter>
+const RoutesFullCard = () => {
+    return (
 
-        <div>
-        <Link to='/'> Home </Link>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}> </Route>
 
-        <div>
-        <Link to='/CardDetail'> Card Details </Link>
-        </div>
-       
-        <Switch>
-            <Route exact path="/">
-                <Cards/>
-            </Route>
+                <Route path="/card-detail/:namePokemon" element={<Card/>}> </Route>
+            </Routes>
 
-            <Route path="/CardDetail">
-                <Card/>
-            </Route>
-        </Switch>
-           
-     
-    </BrowserRouter>
-
-    </>
-  
-)
+            </BrowserRouter>
+    )
 
 }
 

@@ -7,8 +7,7 @@ let QuantityPokemons = 5
 //conectar Api Pokemom
 async function CompleteListOfPokemons() {
   try {
-
-    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=480`
+    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=0`
     const response = await fetch(`${listPokemon}`)
     return await response.json()
 
@@ -21,22 +20,22 @@ async function ItensOfPokemons(url) {
 
     try {
         // const pokemon = `${urlBase}pokemon/%{id}`
-        const response = await fetch(url)
+        const pokemon = `${url}`
+        const response = await fetch(pokemon)
         return await response.json()
     } catch (error) {
-        console.error(error);
+        console.error(error ,' não foi Possivel Conectar a PokeApi');
     }
-    
 }
 
 const PokemonsList = () => {
   const [pokedexData, setPokedexData] = useState([])
-
+  
   useEffect(() => {
 
     const fetchData = async () => {
       const pokemonsList = await CompleteListOfPokemons()
-      // console.log(pokemonsList)
+      console.log(pokemonsList)
       const dates = pokemonsList.results.map(async dates => {  
         return await ItensOfPokemons(dates.url)
       })
@@ -51,28 +50,4 @@ const PokemonsList = () => {
   return {pokedexData};
 }
 
-
-// const Story = () => {
-//   const [characters, setCharacters] = useState(['Mickey', 'Minnie']);
-
-//   useEffect(() => {
-//     // console.log('A lista de personagens foi atualizada:', characters);
-//   }, [characters]);
-
-//   return (
-//     <div>
-//       <h1>Minha história</h1>
-//       <ul>
-//         {characters.map(character => (
-//           <li key={character}>{character}</li>
-//         ))}
-//       </ul>
-//       <button onClick={() => setCharacters(['cabanhas', ...characters])}>
-//         Adicionar personagem
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Story;
 export default PokemonsList
