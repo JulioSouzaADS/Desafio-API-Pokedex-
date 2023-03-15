@@ -10,6 +10,7 @@ const RoutesFullCard = () => {
                 <Route path="/" element={<Home/>}> </Route>
 
                 <Route path="/card-detail/:namePokemon" element={<Card/>}> </Route>
+                
             </Routes>
 
             </BrowserRouter>
