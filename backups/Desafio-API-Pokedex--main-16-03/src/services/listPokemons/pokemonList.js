@@ -3,12 +3,12 @@ import { urlBase } from "../../variables.js/urlApi";
 import { useState, useEffect } from "react";
 import './listPokemons.css'
 
-let QuantityPokemons = 10
+let QuantityPokemons = 15
 let offset = Math.floor(Math.random() * 900);
 //conectar Api Pokemom
 async function CompleteListOfPokemons() {
   try {
-    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=0`
+    const listPokemon = `${urlBase}pokemon?limit=${QuantityPokemons}&offset=50`
     const response = await fetch(`${listPokemon}`)
     return await response.json()
 

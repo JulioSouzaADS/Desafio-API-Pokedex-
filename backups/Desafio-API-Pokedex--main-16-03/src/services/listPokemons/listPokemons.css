@@ -1,0 +1,14 @@
+
+.container {
+    display: flex;
+    justify-content: center;align-items: center;
+    font-style: italic;
+    flex-direction: column;
+}
+
+.container h1 {
+    background-color: cadetblue;
+    font-size: 20px;
+    padding: 20px;
+}
+

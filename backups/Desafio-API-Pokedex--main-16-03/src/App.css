@@ -34,18 +34,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
  font-size: 10px;
- 
 }
 
-.card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: #ccc7c7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px;
-  justify-content: center;
 
-}

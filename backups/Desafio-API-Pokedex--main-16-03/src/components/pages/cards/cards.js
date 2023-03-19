@@ -21,12 +21,11 @@ const Cards = ({ pokemon }) => {
 }
 
     const Section = styled.section`
-    width: 200px;
+    width: 150px;
     height: 250px;
     flex-direction: column;
     margin: 10px;
     background: linear-gradient(to bottom, #42a796, #FA709A);
-    // background: linear-gradient(to bottom, #FA709A, #42a796);
     border-radius: 10px;
     box-shadow: 2px 2px 10px #333;
     text-align: center;
@@ -59,7 +58,7 @@ const Cards = ({ pokemon }) => {
 
     const Image = styled.img `
     padding: 5px;
-    width: 60%;
+    width: 50%;
     height: 10vh;
     ` 
 

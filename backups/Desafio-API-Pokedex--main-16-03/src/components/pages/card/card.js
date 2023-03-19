@@ -34,7 +34,7 @@ const Card = () => {
          
           <Section>
             <div className="card-title">
-              <CardTitleH1> Name #{pokemon.name} Nº {pokemon.id} </CardTitleH1>
+              <CardTitleH1> Name #{pokemon.name} </CardTitleH1>
               <div>
                 <Image src={pokemon.sprites.other.dream_world.front_default} alt="Pokemon" />
               </div>
@@ -65,7 +65,6 @@ const Card = () => {
               <Table2>
               <td>
                       <UL>
-                      <li> 🔥 Default Moviments 🔥 </li>
                         <li>{pokemon.moves[0].move.name}</li>
                         <li>{pokemon.moves[1].move.name}</li>
                         <li>{pokemon.moves[2].move.name}</li>                       
@@ -93,14 +92,6 @@ const Section = styled.section`
   border-radius: 10px;
   box-shadow: 2px 2px 10px #333;
   text-align: center;
-
-  /* dispositivos móveis */
-  @media screen and (max-width: 750px) {
-    height: auto;
-    max-width: 325px;
-    min-height: 725px;
-  }
-  
 `;
 
 
@@ -110,10 +101,6 @@ const CardTitleH1 = styled.h1`
   text-transform: uppercase;
   text-align: center;
   padding: 10px;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-    padding: 5px;
-  }
  
 `;
 
@@ -121,22 +108,16 @@ const Image = styled.img`
   padding: 5px;
   width: 50%;
   height: 20vh;
-  @media screen and (max-width: 768px) {
-    width: 80%;
-  }
 `;
 
 const UL = styled.ul`
  
   padding: 10px;
-  @media screen and (max-width: 768px) {
-    padding: 5px;
-  }
 `;
 
 
 const Table = styled.table`
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   margin: 15px auto;
   min-width: 80%;
@@ -145,15 +126,10 @@ const Table = styled.table`
   border-radius: 10px;
   justify-content: space-between;
   text-align: center ;
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-    min-width: 90%;
-    max-width: 90%;
-  }
 `;
 
 const Button = styled.button`
- margin-top:10%;
+ 
   min-width: 50%;
   max-width: 100%;
   border: 3px solid black;
@@ -162,26 +138,16 @@ const Button = styled.button`
   font-weight: bold;
   font-size:20px
   color: red;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-    margin-top: 5%;
-  }
 `;
 
 const Table2 = styled.table`
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   margin: 15px auto;
   min-width: 80%;
   max-width: 80%;
   border: 1px solid black;
   border-radius: 10px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-    min-width: 90%;
-    max-width: 90%;
-  }
 `;
 
 export default Card
