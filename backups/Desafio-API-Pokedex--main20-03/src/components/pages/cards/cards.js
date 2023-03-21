@@ -11,7 +11,7 @@ const Cards = ({ pokemon }) => {
                     <CardTitleH1> {pokemon.name} #{pokemon.id}</CardTitleH1>
                     <CardTitleH2> {pokemon.types.map(type => (<CardTitleP key={type.type.name}>{type.type.name}</CardTitleP>))} </CardTitleH2>
                     <div>
-                        <Image src={pokemon.sprites.other.home.front_shiny} alt="imagem Pokemon" />
+                        <Image src={pokemon.sprites.other.home.front_shiny} alt="Pokemon" />
                     </div>
                  <SectionDetails> <a href={`/card-detail/${pokemon.name}`}>Ver Detalhes</a> </SectionDetails>
                 </div>
@@ -21,8 +21,8 @@ const Cards = ({ pokemon }) => {
 }
 
     const Section = styled.section`
-    width: 250px;
-    height: 350px;
+    width: 200px;
+    height: 250px;
     flex-direction: column;
     margin: 10px;
     background: linear-gradient(to bottom, #42a796, #FA709A);

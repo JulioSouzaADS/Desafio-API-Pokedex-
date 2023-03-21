@@ -3,7 +3,7 @@ import { urlBase } from "../../variables.js/urlApi";
 import { useState, useEffect } from "react";
 import './listPokemons.css'
 
-let QuantityPokemons = 100
+let QuantityPokemons = 1000
 // let offset = Math.floor(Math.random() * 900);
 //conectar Api Pokemom
 async function CompleteListOfPokemons() {

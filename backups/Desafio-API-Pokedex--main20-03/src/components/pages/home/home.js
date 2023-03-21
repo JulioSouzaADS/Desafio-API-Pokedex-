@@ -34,27 +34,26 @@ import { useState } from 'react'
 
 const Home = () => {
   const { pokedexData } = PokemonsList()
-  //   console.log(pokedexData)
-  const [displayedPokemonsCount, setdisplayedPokemonsCount] = useState(10)
-  const pokemonsPerPage = 50
+//   console.log(pokedexData)
+  const [pokemonsToShow, setPokemonsToShow] = useState(10)
 
   const handleShowMore = () => {
-
-    setdisplayedPokemonsCount(displayedPokemonsCount + pokemonsPerPage)
+    setPokemonsToShow(pokemonsToShow + 50)
   }
 
+  
   return (
     <>
       <main>
         <h1 className='titleh1'> 🔫 Pókemos Amigão Pokemons - Apenas Faça O L Imediatamente 🔫 </h1>
         <div className='direction'>
           <div className="card">
-            {pokedexData && pokedexData.slice(0, displayedPokemonsCount).map(pokemon => (
+          {pokedexData && pokedexData.slice(0, pokemonsToShow).map(pokemon => (
               <Cards key={pokemon.id} pokemon={pokemon} id={pokemon.id} />
             ))}
           </div>
 
-          {pokedexData && displayedPokemonsCount < pokedexData.length && (
+          {pokedexData && pokemonsToShow < pokedexData.length && (
             <button onClick={handleShowMore}> Faça o L Para Mostrar mais</button>
           )}
 

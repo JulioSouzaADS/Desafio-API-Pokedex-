@@ -1,7 +1,7 @@
 import './App.css';
-// import PokemonsList from './services/listPokemons/pokemonList'
+import PokemonsList from './services/listPokemons/pokemonList'
 import RoutesFullCard from './components/routes/routes';
-// import Home from './components/pages/home/home';
+import Home from './components/pages/home/home';
 
 
 

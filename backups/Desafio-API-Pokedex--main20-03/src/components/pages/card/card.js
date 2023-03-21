@@ -20,7 +20,7 @@ const Card = () => {
         setEffects(enEffects);
         // setEffects(data.effect_entries);
       }
-
+      
     };
     fetchData();
   }, [namePokemon, pokedexData]);
@@ -28,10 +28,10 @@ const Card = () => {
   const cardPokemon = pokedexData.map(function (pokemon) {
     // console.log(effects[1])
     // console.log(pokemon)
-    if (pokemon.name === namePokemon) {
+    if (pokemon.name === namePokemon ) {
       return (
         <>
-
+         
           <Section>
             <div className="card-title">
               <CardTitleH1> Name #{pokemon.name} Nº {pokemon.id} </CardTitleH1>
@@ -47,57 +47,58 @@ const Card = () => {
                   </tr>
                 </thead>
                 <tbody>
-
+                  
                   <tr>
                     <td>
                       <UL>
                         <li>Name {pokemon.abilities[0].ability.name}</li>
                         {/* <li>{pokemon.abilities[0].ability.url}</li> */}
                         {/* <li>Effects :{effects.map(effect => effect.effect)}</li> */}
-                        <li>Effects :{effects.map(effect => effect.effect)}</li>
-
+                       <li>Effects :{effects.map(effect => effect.effect)}</li>
+ 
                       </UL>
                     </td>
-
+                   
                   </tr>
                 </tbody>
               </Table>
               <Table2>
-                <td>
-                  <UL>
-                    <li> 🔥 Default Moviments 🔥 </li>
-                    <li>{pokemon.moves[0].move.name}</li>
-                    <li>{pokemon.moves[1].move.name}</li>
-                    <li>{pokemon.moves[2].move.name}</li>
-                  </UL>
-                </td>
-              </Table2>
+              <td>
+                      <UL>
+                      <li> 🔥 Default Moviments 🔥 </li>
+                        <li>{pokemon.moves[0].move.name}</li>
+                        <li>{pokemon.moves[1].move.name}</li>
+                        <li>{pokemon.moves[2].move.name}</li>                       
+                      </UL>
+                    </td>
+                    </Table2>
               <div><Button> <a href="../">Voltar </a> </Button></div>
             </div>
           </Section>
         </>
       );
-    }
+    } 
   });
 
   return <>{cardPokemon}</>;
 };
 
 const Section = styled.section`
-  width: 350px;
+  min-height: 325px;
+  width: 650px;
   height: 750px;
   flex-direction: column;
-  margin: 5% auto;
+  margin: 10px auto;
   background: linear-gradient(to bottom, #42a796, #fa709a);
   border-radius: 10px;
   box-shadow: 2px 2px 10px #333;
   text-align: center;
-  @media screen and (max-width: 568px) {
-    font-size: 16px;
-    padding: 5px;
-    min-height: 325px;
-    width: 95%;
-    height: 90%;
+
+  /* dispositivos móveis */
+  @media screen and (max-width: 750px) {
+    height: auto;
+    max-width: 325px;
+    min-height: 725px;
   }
   
 `;
@@ -118,17 +119,16 @@ const CardTitleH1 = styled.h1`
 
 const Image = styled.img`
   padding: 5px;
-  width: 40%;
+  width: 50%;
   height: 20vh;
-  @media screen and (max-width: 568px) {
-    width: 30%;
+  @media screen and (max-width: 768px) {
+    width: 80%;
   }
 `;
 
 const UL = styled.ul`
  
   padding: 10px;
-  margin:10px;
   @media screen and (max-width: 768px) {
     padding: 5px;
   }
@@ -153,19 +153,18 @@ const Table = styled.table`
 `;
 
 const Button = styled.button`
-  margin-top:5%;
+ margin-top:10%;
   min-width: 50%;
   max-width: 100%;
   border: 3px solid black;
   border-radius: 10px;
   justify-content: space-between;
   font-weight: bold;
-  font-size:5px;
+  font-size:20px
   color: red;
-
   @media screen and (max-width: 768px) {
-    font-size: 1px;
-    margin-top:1%;
+    font-size: 16px;
+    margin-top: 5%;
   }
 `;
 
