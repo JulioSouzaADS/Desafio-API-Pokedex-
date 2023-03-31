@@ -26,7 +26,7 @@ const Card = () => {
   }, [namePokemon, pokedexData]);
 
   const cardPokemon = pokedexData.map(function (pokemon) {
-    // console.log(effects[1])
+    console.log(effects)
     // console.log(pokemon)
     if (pokemon.name === namePokemon) {
       return (
@@ -34,7 +34,7 @@ const Card = () => {
 
           <Section>
             <div className="card-title">
-              <CardTitleH1> Name #{pokemon.name} Nº {pokemon.id} </CardTitleH1>
+              <CardTitleH1> Name #{pokemon.name} Nº {pokemon.id} type {pokemon.type} </CardTitleH1>
               <div>
                 <Image src={pokemon.sprites.other.dream_world.front_default} alt="Pokemon" />
               </div>
@@ -84,8 +84,8 @@ const Card = () => {
 };
 
 const Section = styled.section`
-  width: 350px;
-  height: 750px;
+  width: 650px;
+  // height: 750px;
   flex-direction: column;
   margin: 5% auto;
   background: linear-gradient(to bottom, #42a796, #fa709a);
@@ -119,7 +119,7 @@ const CardTitleH1 = styled.h1`
 const Image = styled.img`
   padding: 5px;
   width: 40%;
-  height: 20vh;
+  min-width: 150px;
   @media screen and (max-width: 568px) {
     width: 30%;
   }

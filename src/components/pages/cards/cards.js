@@ -1,12 +1,15 @@
 import React from "react";
 import './card.css'
 import styled from "styled-components";
+import { ThemeContext } from "../../../themes/themeContext";
+import { useContext } from "react";
 
 const Cards = ({ pokemon }) => {
-  
+    const { theme } = useContext(ThemeContext)
+    // console.log(theme)
     return (
-        <>
-            <Section >
+        <>  
+            <Section theme={ theme }>
                 <div className="card-title">
                     <CardTitleH1> {pokemon.name} #{pokemon.id}</CardTitleH1>
                     <CardTitleH2> {pokemon.types.map(type => (<CardTitleP key={type.type.name}>{type.type.name}</CardTitleP>))} </CardTitleH2>
@@ -21,18 +24,18 @@ const Cards = ({ pokemon }) => {
 }
 
     const Section = styled.section`
+    /* background-color: ${props => (props.theme.background)};  */
     width: 250px;
-    height: 350px;
+    min-width: 300px;
+    // height: 350px;
     flex-direction: column;
-    margin: 10px;
+    margin: 15px;
     background: linear-gradient(to bottom, #42a796, #FA709A);
-    // background: linear-gradient(to bottom, #FA709A, #42a796);
     border-radius: 10px;
     box-shadow: 2px 2px 10px #333;
     text-align: center;
     
     `
-    
     const CardTitleH1 = styled.h1 `
     margin: 0;
     font-size: 12px;
@@ -59,13 +62,15 @@ const Cards = ({ pokemon }) => {
 
     const Image = styled.img `
     padding: 5px;
-    width: 60%;
-    height: 20vh;
+    width: 80%;
+    // height: 20vh;
+    min-width: 150px;
     ` 
 
     const SectionDetails = styled.div `
     text-transform: uppercase;
     font-style: italic;
     padding-top:15px;
+    font-weight: 700;
     `
 export default Cards

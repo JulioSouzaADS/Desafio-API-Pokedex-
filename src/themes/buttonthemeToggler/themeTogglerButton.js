@@ -1,9 +1,10 @@
 import { useContext } from "react"
-import { ThemeContext } from "../../context/themeContext"
+import { ThemeContext } from "../themeContext"
 
 export const ButtonToggler = (props) => {
+
 const {theme } = useContext (ThemeContext)
-    console.log("button thems ",theme)
+    console.log("button thems ",props)
     return (
         <button {...props}
         style={{ color: theme.color, backgroundColor:theme.background}}

@@ -1,17 +1,20 @@
 import './App.css';
-// import PokemonsList from './services/listPokemons/pokemonList'
 import RoutesFullCard from './components/routes/routes';
-// import Home from './components/pages/home/home';
+import { ThemeProvider } from './themes/themeContext';
 
-
+import { ThemeContext } from './themes/themeContext';
+import { ButtonToggler } from './themes/buttonthemeToggler/themeTogglerButton';
+import { useContext } from 'react';
 
 function App() {
   // const { pokedexData } = PokemonsList()
   // console.log(pokedexData)
   return (
     <>
-      <RoutesFullCard />
-      {/* <Home></Home> */}
+      <ThemeProvider>  
+        <RoutesFullCard /> 
+      </ThemeProvider>
+     
     </>
   )
 }

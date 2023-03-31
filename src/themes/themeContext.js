@@ -2,22 +2,22 @@ import { createContext, useState } from "react"
 
 export const themes = { 
     light : {
-        color : '#000000',
-        background : ' #eeeeee'
+        color :  ' #FA709A',
+        background : '#42a796'
     },
 
       dark : {
-        color : '#ffffff',
-        background : ' #000000'
+        color : '#42a796',
+        background : ' #748B43'
     }
 }
 
-export const ThemeContext = createContext({})
+export const ThemeContext = createContext()
 
 export const ThemeProvider = (props) => {
 
     const [ theme ,setTheme] = useState(themes.dark)
-    console.log(themes)
+    // console.log(theme,'retorno')
     return(
         <ThemeContext.Provider value={{theme,setTheme}}>
             {props.children }

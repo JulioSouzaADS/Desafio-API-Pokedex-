@@ -3,7 +3,7 @@ import { urlBase } from "../../variables.js/urlApi";
 import { useState, useEffect } from "react";
 import './listPokemons.css'
 
-let QuantityPokemons = 100
+let QuantityPokemons = 10
 // let offset = Math.floor(Math.random() * 900);
 //conectar Api Pokemom
 async function CompleteListOfPokemons() {
@@ -18,7 +18,6 @@ async function CompleteListOfPokemons() {
 }
 
 async function ItensOfPokemons(url) {
-
     try {
         // const pokemon = `${urlBase}pokemon/%{id}`
         const pokemon = `${url}`
@@ -50,5 +49,6 @@ const PokemonsList = () => {
   // console.log (pokedexData)
   return {pokedexData};
 }
+
 
 export default PokemonsList

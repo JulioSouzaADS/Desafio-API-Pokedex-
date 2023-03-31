@@ -1,9 +1,8 @@
 import Cards from '../cards/cards'
 import PokemonsList from '../../../services/listPokemons/pokemonList'
-import { ButtonToggler } from '../../buttonthemeToggler/themeTogglerButton'
-import { ThemeProvider } from '../../../context/themeContext'
-import { ThemeTogglerButton } from '../../themeTogglerButton/themeTogglerButton'
 import { useState } from 'react'
+
+import {ThemeProvider} from "../../../themes/themeContext"
 
 // const Home = () => {
 //   const { pokedexData } = PokemonsList()
@@ -32,11 +31,13 @@ import { useState } from 'react'
 // }
 
 
+
 const Home = () => {
+  
   const { pokedexData } = PokemonsList()
   //   console.log(pokedexData)
   const [displayedPokemonsCount, setdisplayedPokemonsCount] = useState(10)
-  const pokemonsPerPage = 50
+  const pokemonsPerPage = 10
 
   const handleShowMore = () => {
 
@@ -46,8 +47,11 @@ const Home = () => {
   return (
     <>
       <main>
-        <h1 className='titleh1'> 🔫 Pókemos Amigão Pokemons - Apenas Faça O L Imediatamente 🔫 </h1>
+              
+  
+        <h1 className='titleh1'> 🔫 Pókemos 🔫 </h1>
         <div className='direction'>
+
           <div className="card">
             {pokedexData && pokedexData.slice(0, displayedPokemonsCount).map(pokemon => (
               <Cards key={pokemon.id} pokemon={pokemon} id={pokemon.id} />
@@ -55,14 +59,14 @@ const Home = () => {
           </div>
 
           {pokedexData && displayedPokemonsCount < pokedexData.length && (
-            <button onClick={handleShowMore}> Faça o L Para Mostrar mais</button>
+            <button onClick={handleShowMore}> Mostrar mais</button>
           )}
 
         </div>
+       
       </main>
     </>
   )
 }
-
 
 export default Home;
