@@ -34,7 +34,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
  font-size: 10px;
- 
 }
 
 .card {
@@ -42,17 +41,19 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #ccc7c7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px;
   justify-content: center;
-
+  background-color: #5494bc;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-size: 50px 50px;
 }
 
 button { 
-  font-size: 40px;
+  font-size: 20px;
   border-radius: 5px;
   border: 1px solid;
   background-color: #ccc7c7;
+  margin-bottom: 5px;
 }

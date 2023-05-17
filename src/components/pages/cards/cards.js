@@ -6,7 +6,6 @@ import { useContext } from "react";
 
 const Cards = ({ pokemon }) => {
     const { theme } = useContext(ThemeContext)
-    // console.log(theme)
     return (
         <>  
             <Section theme={ theme }>
@@ -16,7 +15,7 @@ const Cards = ({ pokemon }) => {
                     <div>
                         <Image src={pokemon.sprites.other.home.front_shiny} alt="imagem Pokemon" />
                     </div>
-                 <SectionDetails> <a href={`/card-detail/${pokemon.name}`}>Ver Detalhes</a> </SectionDetails>
+                 <SectionDetails> <a href={`/card-detail/${pokemon.name}`}>Detalhes</a> </SectionDetails>
                 </div>
             </Section>
         </>
@@ -27,13 +26,19 @@ const Cards = ({ pokemon }) => {
     /* background-color: ${props => (props.theme.background)};  */
     width: 250px;
     min-width: 300px;
-    // height: 350px;
     flex-direction: column;
     margin: 15px;
     background: linear-gradient(to bottom, #42a796, #FA709A);
     border-radius: 10px;
     box-shadow: 2px 2px 10px #333;
     text-align: center;
+
+    &:hover{
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background-color: red;
+      transition: 0.5s ease-in-out;
+    }
     
     `
     const CardTitleH1 = styled.h1 `
@@ -63,14 +68,14 @@ const Cards = ({ pokemon }) => {
     const Image = styled.img `
     padding: 5px;
     width: 80%;
-    // height: 20vh;
     min-width: 150px;
     ` 
 
-    const SectionDetails = styled.div `
+    const SectionDetails = styled.button `
     text-transform: uppercase;
     font-style: italic;
-    padding-top:15px;
+    padding-bottom:5px;
     font-weight: 700;
+    border: 1px solid black;
     `
 export default Cards

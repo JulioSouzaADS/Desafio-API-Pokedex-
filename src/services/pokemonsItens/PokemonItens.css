@@ -3,8 +3,6 @@ ul{
 }
 
 .card {
-  /* width: 600px;
-  height: 800px; */
   background: linear-gradient(to bottom, #FEE140, #FA709A);
   border-radius: 10px;
   box-shadow: 2px 2px 10px #333;
@@ -38,14 +36,6 @@ ul{
   width: 80%;
   
 }
-
-/* .card-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border: 2px solid black;
-  border-radius: 10px 10px 0 0;
-} */
 
 .card-details {
   border: 2px solid black;
@@ -83,11 +73,10 @@ strong {
 
 }
 
-
 img {
   padding: 30px;
   width: 80%;
   height: 30vh;
   border: 2px solid black;
- 
+
 }

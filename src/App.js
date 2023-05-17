@@ -7,18 +7,13 @@ import { ButtonToggler } from './themes/buttonthemeToggler/themeTogglerButton';
 import { useContext } from 'react';
 
 function App() {
-  // const { pokedexData } = PokemonsList()
-  // console.log(pokedexData)
   return (
     <>
       <ThemeProvider>  
         <RoutesFullCard /> 
-      </ThemeProvider>
-     
+      </ThemeProvider> 
     </>
   )
 }
 
 export default App;
-
-

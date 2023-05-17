@@ -3,6 +3,7 @@ import PokemonsList from "../../../services/listPokemons/pokemonList";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import './card-layout.css'
 
 const Card = () => {
   const { namePokemon } = useParams();
@@ -18,7 +19,6 @@ const Card = () => {
         //adicionei essa parte na busca pelo texto ''en
         const enEffects = data.effect_entries.filter(effect => effect.language.name === 'en');
         setEffects(enEffects);
-        // setEffects(data.effect_entries);
       }
 
     };
@@ -26,55 +26,32 @@ const Card = () => {
   }, [namePokemon, pokedexData]);
 
   const cardPokemon = pokedexData.map(function (pokemon) {
-    console.log(effects)
-    // console.log(pokemon)
     if (pokemon.name === namePokemon) {
       return (
         <>
-
-          <Section>
-            <div className="card-title">
-              <CardTitleH1> Name #{pokemon.name} Nº {pokemon.id} type {pokemon.type} </CardTitleH1>
-              <div>
-                <Image src={pokemon.sprites.other.dream_world.front_default} alt="Pokemon" />
-              </div>
-
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Habilities</th>
-                    {/* <th>Pokémon</th> */}
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <tr>
-                    <td>
-                      <UL>
-                        <li>Name {pokemon.abilities[0].ability.name}</li>
-                        {/* <li>{pokemon.abilities[0].ability.url}</li> */}
-                        {/* <li>Effects :{effects.map(effect => effect.effect)}</li> */}
-                        <li>Effects :{effects.map(effect => effect.effect)}</li>
-
-                      </UL>
-                    </td>
-
-                  </tr>
-                </tbody>
-              </Table>
-              <Table2>
-                <td>
-                  <UL>
-                    <li> 🔥 Default Moviments 🔥 </li>
-                    <li>{pokemon.moves[0].move.name}</li>
-                    <li>{pokemon.moves[1].move.name}</li>
-                    <li>{pokemon.moves[2].move.name}</li>
-                  </UL>
-                </td>
-              </Table2>
-              <div><Button> <a href="../">Voltar </a> </Button></div>
+          <CardLayout>
+            <CardHeader>
+              <h2>Name {pokemon.name} </h2>
+              <p> Type {pokemon.types[0].type.name}</p>
+            </CardHeader>
+            <div className="card-image">
+              <img src={pokemon.sprites.other.dream_world.front_default} alt="Imagem da Carta" />
             </div>
-          </Section>
+            <div className="card-body">
+              <p>Efeito da Carta</p>
+              <p>Effects :{effects.map(effect => effect.effect)}</p>
+            </div>
+            <CardFooter>
+              <p>🔥 Default Moviments  Nº {pokemon.id}🔥</p>
+              <CardFooterUl>
+                <li>{pokemon.moves[0].move.name}</li>
+                <li>{pokemon.moves[1].move.name}</li>
+                <li>{pokemon.moves[2].move.name}</li>
+              </CardFooterUl>
+            </CardFooter>
+            <Button> <a href="../">Voltar </a> </Button>
+          </CardLayout>
+          
         </>
       );
     }
@@ -83,106 +60,96 @@ const Card = () => {
   return <>{cardPokemon}</>;
 };
 
-const Section = styled.section`
-  width: 650px;
-  // height: 750px;
-  flex-direction: column;
-  margin: 5% auto;
-  background: linear-gradient(to bottom, #42a796, #fa709a);
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #333;
-  text-align: center;
-  @media screen and (max-width: 568px) {
-    font-size: 16px;
+const CardLayout = styled.section`
+    position: relative;
+    width: 40%;
+    background: #000;
+    border-radius: 20px;
+    margin: 60px auto;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #42a796, #FA709A);
+    }
+
+
+
+    @media screen and (max-width: 825px) {
+      width: 80%;
+  }
+`
+
+const CardHeader = styled.div`
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+
+    &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(45deg, #1c90b6, #111); 
+  }
+    `
+    
+const CardFooter = styled.div`
     padding: 5px;
-    min-height: 325px;
-    width: 95%;
-    height: 90%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    @media screen and (max-width: 725px) {
+    font-size: 10px;
+    margin-top:1%;
   }
-  
-`;
+    `
 
+const CardFooterUl = styled.ul`
+padding: 5px;
 
-const CardTitleH1 = styled.h1`
-  margin: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10px;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-    padding: 5px;
-  }
- 
-`;
-
-const Image = styled.img`
-  padding: 5px;
-  width: 40%;
-  min-width: 150px;
-  @media screen and (max-width: 568px) {
-    width: 30%;
-  }
-`;
-
-const UL = styled.ul`
- 
-  padding: 10px;
-  margin:10px;
-  @media screen and (max-width: 768px) {
-    padding: 5px;
-  }
-`;
-
-
-const Table = styled.table`
-  font-size: 18px;
-  font-weight: bold;
-  margin: 15px auto;
-  min-width: 80%;
-  max-width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-  justify-content: space-between;
-  text-align: center ;
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-    min-width: 90%;
-    max-width: 90%;
-  }
-`;
+`
 
 const Button = styled.button`
-  margin-top:5%;
+  margin: auto;
+  align-items: center;
   min-width: 50%;
-  max-width: 100%;
+  max-width: 60%;
   border: 3px solid black;
   border-radius: 10px;
-  justify-content: space-between;
+  justify-content:center;
   font-weight: bold;
-  font-size:5px;
+  font-size:25px;
   color: red;
-
+  z-index: 2;
+  margin-bottom: 20px;
   @media screen and (max-width: 768px) {
     font-size: 1px;
     margin-top:1%;
   }
-`;
-
-const Table2 = styled.table`
-  font-size: 18px;
-  font-weight: bold;
-  margin: 15px auto;
-  min-width: 80%;
-  max-width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-    min-width: 90%;
-    max-width: 90%;
-  }
-`;
-
+`
 export default Card

@@ -10,7 +10,7 @@ let id = Math.floor(Math.random() * 900);
 async function ItensOfPokemons() {
 
     try {
-        // const pokemon = `${urlBase}pokemon/%{id}`
+
         const pokemon = `${urlBase}pokemon/%{id}`
         const response = await fetch(`${pokemon}`)
         return await response.json()

@@ -1,0 +1,27 @@
+
+  .card-image {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card-image img {
+    max-width: 70%;
+    height: auto;
+  }
+  
+  .card-body {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card-body p {
+    margin: 0;
+    padding: 10px 0;
+  }
+  

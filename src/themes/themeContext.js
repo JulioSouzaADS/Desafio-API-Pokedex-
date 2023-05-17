@@ -2,7 +2,7 @@ import { createContext, useState } from "react"
 
 export const themes = { 
     light : {
-        color :  ' #FA709A',
+        color :  ' #748B43',
         background : '#42a796'
     },
 
@@ -17,7 +17,6 @@ export const ThemeContext = createContext()
 export const ThemeProvider = (props) => {
 
     const [ theme ,setTheme] = useState(themes.dark)
-    // console.log(theme,'retorno')
     return(
         <ThemeContext.Provider value={{theme,setTheme}}>
             {props.children }
