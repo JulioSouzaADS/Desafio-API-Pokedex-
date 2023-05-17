@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+https://desafio-api-pokedex.vercel.app/
+https://desafio-api-pokedex.vercel.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
